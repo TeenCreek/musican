@@ -19,7 +19,7 @@ py -m venv venv
 
 ```pip install -r requirements.txt```
 
-### 4. Применить миграции
+### 4. Примените миграции
 
 ```py manage.py migrate```
 
