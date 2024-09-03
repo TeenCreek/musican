@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Удалить {{ object.name }}{% endblock %}
+
+{% block main %}
+  <div class="container">
+    <section class="form__box">
+      <h1 class="form__title">Удалить: {{ object.name }}?</h1>
+      <form class="form" method="post">
+        {% csrf_token %}
+        <button class="form__btn" type="submit">Удалить</button>
+        <a href="{% url 'music:artist_list' %}">Отмена</a>
+      </form>
+    </section>
+  </div>
+{% endblock %}

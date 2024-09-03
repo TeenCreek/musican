@@ -1,0 +1,15 @@
+.group__list ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.group__info {
+  display: grid;
+  gap: 10px;
+}
+
+.groups {
+  display: flex;
+  flex-wrap: wrap;
+}

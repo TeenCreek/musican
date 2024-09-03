@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}{{ track.name }}{% endblock %}
+
+{% block main %}
+  <div class="container">
+
+    {% include "music/includes/links.html" with var=track %}
+
+    <section class="track__info">
+      <h1 class="track__title">{{ track.name }}</h1>
+      <p class="artist__name">
+        Артист: 
+        <a href="{% url 'music:artist_detail' track.artist.pk %}">{{ track.artist }}</a>
+      </p>
+      <p class="album__name">
+        Альбом: 
+        <a href="{% url 'music:album_detail' track.album.pk %}">{{ track.album }}</a>
+      </p>
+      <p class="group__name">
+        Группа:
+        <a href="{% url 'music:group_detail' track.group.id %}">{{ track.group }}</a>
+      </p>
+      <p class="track__duration">Длительность: {{ track.duration }} мин.</p>
+      <span class="track__genre">Жанр: {{ track.genre }}</span>
+    </section>
+    <div>
+      <h2 class="track__text">Текст песни</h2>
+      <pre>{{ track.text }}</pre>
+    </div>
+  </div>
+{% endblock %}

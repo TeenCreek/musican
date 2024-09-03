@@ -1,0 +1,60 @@
+<header class="header">
+  <div class="container">
+    <div class="header__inner">
+      <nav class="nav nav__music">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="{% url 'music:track_list' %}" class="nav__link">Главная</a>
+          </li>
+          <li class="nav__item">
+            <a href="{% url 'music:artist_list' %}" class="nav__link">Список исполнителей</a>
+          </li>
+          <li class="nav__item">
+            <a href="{% url 'music:group_list' %}" class="nav__link">Список групп</a>
+          </li>
+          {% if user.is_authenticated %}
+            <li class="nav__item">
+              <a href="{% url 'music:artist_create' %}" class="nav__link">Создать исполнителя</a>
+            </li>
+            <li class="nav__item">
+              <a href="{% url 'music:track_create' %}" class="nav__link">Создать трек</a>
+            </li>
+            <li class="nav__item">
+              <a href="{% url 'music:group_create' %}" class="nav__link">Создать группу</a>
+            </li>
+            <li class="nav__item">
+              <a href="{% url 'music:album_create' %}" class="nav__link">Создать альбом</a>
+            </li>
+          {% endif %}
+        </ul>
+      </nav>
+      <nav class="nav nav__user">
+        <ul class="nav__list">
+            {% if user.is_authenticated %}
+            <li class="nav__item nav__username">
+                <a href="#" class="nav__link user-dropdown-toggle">Пользователь: {{ user.username }}</a>
+                <ul class="user-dropdown">
+                    <li class="nav__item">
+                        <a href="{% url 'users:password_change' %}" class="nav__link">Изменить пароль</a>
+                    </li>
+                    <li class="nav__item">
+                        <form action="{% url 'users:logout' %}" method="post" class="logout-form">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn--logout">Выйти</button>
+                        </form>
+                    </li>
+                </ul>
+            </li>
+            {% else %}
+            <li class="nav__item"> 
+                <a href="{% url 'users:login' %}" class="nav__link">Войти</a>
+            </li>
+            <li class="nav__item"> 
+                <a href="{% url 'users:signup' %}" class="nav__link">Регистрация</a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+        </div>
+  </div>
+</header>

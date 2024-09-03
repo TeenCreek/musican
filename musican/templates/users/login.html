@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Войти{% endblock %}
+
+{% block main %}
+  <div class="container">
+    <section>
+      <h2>Вход</h2>
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Войти</button>
+      </form>
+
+      <a href="{% url 'users:password_reset' %}">Сбросить пароль</a>
+    </section>
+  </div>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% if tracks %}
+  <ul>
+    {% for track in tracks %}
+      <li><a href="{% url 'music:track_detail' track.id %}">{{ track.name }}</a></li>
+    {% endfor %}
+  </ul>
+{% else %}
+  Нет песен
+{% endif %}

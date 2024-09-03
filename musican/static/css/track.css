@@ -1,0 +1,23 @@
+.track__list {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: start;
+  align-content: center;
+}
+
+.track__name {
+  margin-bottom: 5px;
+}
+
+.track__info {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 7px;
+  margin-bottom: 25px;
+}
+
+.track__text {
+  margin-bottom: 25px;
+  text-decoration: underline;
+}

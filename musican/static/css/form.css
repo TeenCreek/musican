@@ -1,0 +1,55 @@
+.form__box {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  justify-items: center;
+  gap: 10px;
+}
+
+.form__title {
+  text-align: center;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+}
+
+.form input,
+.form select,
+.form textarea {
+  border-radius: 12px;
+  padding: 5px;
+}
+
+.form p {
+  display: grid;
+  gap: 5px;
+}
+
+.form a {
+  display: block;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.form a:hover {
+  background-color: #7c0101;
+}
+
+.form__btn {
+  justify-self: start;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.form__btn:hover {
+  background-color: #3e8e41;
+}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}{{ group.name }}{% endblock %}
+
+{% block main %}
+  <div class="container">
+    <section class="group__info">
+
+      {% include "music/includes/links.html" with var=group %}
+
+      <h1>{{ group.name }}</h1>
+      <p>Дата основания: {{ group.date_foundation }}</p>
+    
+      <div>
+        <h2>Состав группы:</h2>
+        {% include "music/includes/artists.html" with var=members %}
+      </div>
+    
+      <div>
+        <h2>Треки группы:</h2>
+        {% include "music/includes/tracks.html" %}
+      </div>
+    </section>
+  </div>
+{% endblock %}
+

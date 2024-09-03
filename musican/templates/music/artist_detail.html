@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}{{ artist.name }}{% endblock %}
+
+{% block main %}
+  <div class="container">
+    <section class="artist__info">
+      {% include "music/includes/links.html" with var=artist %}
+
+      <h1 class="artist__name">Исполнитель: {{ artist.name }}</h1>
+      <p class="artist__birth-day">Дата рождения: {{ artist.birth_day }}</p>
+      <p class="artist__country">Страна: {{ artist.country }}</p>
+
+      <div class="artist__group">
+        <p>Группы автора:</p>
+        {% include "music/includes/groups.html" %}
+      </div>
+
+      <div>
+        <h2>Песни исполнителя</h2>
+        {% include "music/includes/tracks.html" %}
+      </div>
+
+      <p class="artist__description">{{ artist.info }}</p>
+    </section>
+  </div>
+{% endblock %}

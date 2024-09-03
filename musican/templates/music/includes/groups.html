@@ -1,0 +1,7 @@
+<ul>
+  {% for group in groups %}
+      <li><a href="{% url 'music:group_detail' group.pk %}">{{ group.name }}</a></li>
+  {% empty %}
+    <li>Групп нет</li>
+  {% endfor %}
+</ul>

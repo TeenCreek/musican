@@ -1,0 +1,94 @@
+.header {
+  padding: 10px 0;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Стили для навигации */
+.nav {
+  display: flex;
+}
+
+.nav__list {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.nav__item {
+  position: relative;
+}
+
+.nav__link {
+  padding: 8px 16px;
+  display: block;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.nav__link:hover {
+  background-color: #555;
+}
+
+/* Стили для кнопок */
+.btn {
+  background-color: #ff4b2b;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #e03e1e;
+}
+
+.nav__user {
+  border: 1px solid #ff4b2b;
+  border-radius: 4px;
+}
+
+/* Основные стили для выпадающего меню */
+.nav__username {
+  position: relative;
+}
+
+.user-dropdown {
+  display: none; /* Скрываем меню по умолчанию */
+  position: absolute;
+  right: 0;
+  background-color: #333;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.user-dropdown .nav__link,
+.btn--logout {
+  color: #fff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  background: none;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+.user-dropdown .nav__link:hover,
+.btn--logout:hover {
+  background-color: #ff4b2b;
+}
+
+/* Показ меню при клике */
+.user-dropdown.show {
+  display: block;
+}

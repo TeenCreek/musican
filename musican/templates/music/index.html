@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Список треков{% endblock %}
+
+{% block main %}
+  <div class="container">
+    <h1 class="title">Список треков</h1>
+    <section class="track__info">
+      <ul class="track__list">
+        {% for track in tracks %}
+          <li class="track__item">
+            <h2 class="track__name">
+              <a href="{% url 'music:track_detail' track.id %}">{{ track.name }}</a>
+            </h2>
+            {% if track.group %}
+              <a class="track__group" href="{% url 'music:group_detail' track.group.id %}">{{ track.group }}</a>
+            {% endif %}
+          </li>
+        {% empty %}
+          <li>Треков нет</li>
+        {% endfor %}
+      </ul>
+    </section>
+  </div>
+{% endblock %}
+    

@@ -1,0 +1,16 @@
+.artist__list ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.artist__info {
+  display: grid;
+  gap: 10px;
+}
+
+.artist__group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}

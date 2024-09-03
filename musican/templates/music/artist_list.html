@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Список исполнителей{% endblock %}
+
+{% block main %}
+  <div class="container">
+    <section class="artist__list">
+      <h1 class="title">Список исполнителей</h1>
+
+      {% include "music/includes/artists.html" with var=artists %}
+    </section>
+  </div>
+{% endblock %}
